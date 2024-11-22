@@ -1,0 +1,9 @@
+public with sharing class SurveyController {
+    @AuraEnabled
+    public static Id saveSurvey(String satisfactionValue) {
+        Survey__c survey = new Survey__c();
+        survey.Satisfaction__c = satisfactionValue;
+        insert survey;
+        return survey.Id;
+    }
+}
