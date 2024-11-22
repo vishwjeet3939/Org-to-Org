@@ -1,9 +1,26 @@
 public with sharing class SurveyController {
     @AuraEnabled
-    public static Id saveSurvey(String satisfactionValue) {
+   /* public static Id saveSurvey(String satisfactionValue) {
         Survey__c survey = new Survey__c();
         survey.Satisfaction__c = satisfactionValue;
         insert survey;
         return survey.Id;
+    }*/
+
+public with sharing class SurveyController {
+    @AuraEnabled
+    public static Id saveSurvey(String satisfactionValue, String improvementComment) {
+        Survey__c survey = new Survey__c();
+        survey.Satisfaction__c = satisfactionValue;
+        
+        // Check if improvementComment is provided and not blank
+        if (String.isNotBlank(improvementComment)) {
+            survey.Improvement_Comment__c = improvementComment; // Ensure the API name is correct
+        }
+        
+        insert survey;
+        return survey.Id;
     }
+}
+
 }
