@@ -3,7 +3,6 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import saveSurvey from '@salesforce/apex/SurveyController.saveSurvey';
 
 export default class SurveyComponent extends LightningElement {
-    // Variables to track the survey state
     showSurvey = true; // Whether to show the survey or the thank you message
     satisfactionValue = ''; // To store the selected emoji value
     improvementComment = ''; // To store the comment entered by the user
@@ -48,7 +47,10 @@ export default class SurveyComponent extends LightningElement {
         }
 
         // Create the survey record by calling Apex
-        saveSurvey({ satisfactionValue: this.satisfactionValue })
+        saveSurvey({ 
+            satisfactionValue: this.satisfactionValue,
+            improvementComment: this.improvementComment // Pass the improvement comment to Apex
+        })
             .then((result) => {
                 // After successful submission, show a success toast
                 this.showToast('Success', 'Your feedback has been submitted!', 'success');
