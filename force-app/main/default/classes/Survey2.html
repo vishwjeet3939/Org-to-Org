@@ -2,7 +2,7 @@
     <lightning-card title="Customer Satisfaction Survey">
         <template if:true={showSurvey}>
             <div class="slds-text-align_center slds-m-around_medium">
-                <p class="slds-text-heading_small">How satisfied were you with the order?</p>
+                <p class="slds-text-heading_small">Overall, how would you rate your check-in experience at our hotel?</p>
                 <div class="slds-grid slds-grid_align-center slds-wrap slds-m-top_medium">
                     <button 
                         class="slds-m-horizontal_small"
@@ -29,30 +29,7 @@
                         <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Very Poor</div>
                     </button>
 
-                    <button 
-                        class="slds-m-horizontal_small"
-                        data-value="Poor"
-                        style="
-                            font-size: 2.5rem; 
-                            transition: transform 0.2s; 
-                            border: none; 
-                            background: none; 
-                            border-radius: 50%; 
-                            width: 5rem; 
-                            height: 5rem; 
-                            display: flex; 
-                            flex-direction: column;     
-                            justify-content: center; 
-                            align-items: center; 
-                            cursor: pointer;
-                            padding: 0.5rem; 
-                            text-align: center;"
-                        onmouseover={handleMouseOver}
-                        onmouseout={handleMouseOut}
-                        onclick={handleEmojiClick}>
-                        ☹️
-                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Poor</div>
-                    </button>
+                    
 
                     <button 
                         class="slds-m-horizontal_small"
@@ -79,30 +56,7 @@
                         <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Neutral</div>
                     </button>
 
-                    <button 
-                        class="slds-m-horizontal_small"
-                        data-value="Great"
-                        style="
-                            font-size: 2.5rem; 
-                            transition: transform 0.2s; 
-                            border: none; 
-                            background: none; 
-                            border-radius: 50%; 
-                            width: 5rem; 
-                            height: 5rem; 
-                            display: flex; 
-                            flex-direction: column;     
-                            justify-content: center; 
-                            align-items: center; 
-                            cursor: pointer;
-                            padding: 0.5rem; 
-                            text-align: center;"
-                        onmouseover={handleMouseOver}
-                        onmouseout={handleMouseOut}
-                        onclick={handleEmojiClick}>
-                        🙂
-                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Great</div>
-                    </button>
+                    
 
                     <button 
                         class="slds-m-horizontal_small"
@@ -126,7 +80,7 @@
                         onmouseout={handleMouseOut}
                         onclick={handleEmojiClick}>
                         😍
-                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Excellent</div>
+                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Happy</div>
                     </button>
                 </div>
 
@@ -149,7 +103,7 @@
                 <template if:true={isSubmitVisible}>
                     <div style="display: flex; justify-content: center; width: 100%;">
                         <lightning-button 
-                            label="Submit"
+                            label="Submit" 
                             variant="brand"
                             class="slds-m-top_medium"
                             style="margin-top: 1rem;"
@@ -157,6 +111,8 @@
                         </lightning-button>
                     </div>
                 </template>
+            </div>
+        </template>
 
         <template if:false={showSurvey}>
             <div class="slds-text-align_center slds-m-around_medium">
