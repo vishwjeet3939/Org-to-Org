@@ -4,51 +4,22 @@
             <div class="slds-text-align_center slds-m-around_medium">
                 <p class="slds-text-heading_small">Overall, how would you rate your check-in experience at our hotel?</p>
                 <div class="slds-grid slds-grid_align-center slds-wrap slds-m-top_medium">
+                    <!-- Emoji Buttons -->
                     <button 
                         class="slds-m-horizontal_small"
-                        data-value="Very Poor"
-                        style="
-                            font-size: 2.5rem; 
-                            transition: transform 0.2s; 
-                            border: none; 
-                            background: none; 
-                            border-radius: 50%; 
-                            width: 5rem; 
-                            height: 5rem; 
-                            display: flex; 
-                            flex-direction: column;     
-                            justify-content: center; 
-                            align-items: center; 
-                            cursor: pointer;
-                            padding: 0.5rem; 
-                            text-align: center;"
+                        data-value="Bad"
+                        style="font-size: 2.5rem; transition: transform 0.2s; border: none; background: none; border-radius: 50%; width: 5rem; height: 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; padding: 0.5rem; text-align: center;"
                         onmouseover={handleMouseOver}
                         onmouseout={handleMouseOut}
                         onclick={handleEmojiClick}>
                         😭
-                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Very Poor</div>
+                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Bad</div>
                     </button>
-
-                    
 
                     <button 
                         class="slds-m-horizontal_small"
                         data-value="Neutral"
-                        style="
-                            font-size: 2.5rem; 
-                            transition: transform 0.2s; 
-                            border: none; 
-                            background: none; 
-                            border-radius: 50%; 
-                            width: 5rem; 
-                            height: 5rem; 
-                            display: flex; 
-                            flex-direction: column;     
-                            justify-content: center; 
-                            align-items: center; 
-                            cursor: pointer;
-                            padding: 0.5rem; 
-                            text-align: center;"
+                        style="font-size: 2.5rem; transition: transform 0.2s; border: none; background: none; border-radius: 50%; width: 5rem; height: 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; padding: 0.5rem; text-align: center;"
                         onmouseover={handleMouseOver}
                         onmouseout={handleMouseOut}
                         onclick={handleEmojiClick}>
@@ -56,26 +27,10 @@
                         <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Neutral</div>
                     </button>
 
-                    
-
                     <button 
                         class="slds-m-horizontal_small"
-                        data-value="Excellent"
-                        style="
-                            font-size: 2.5rem; 
-                            transition: transform 0.2s; 
-                            border: none; 
-                            background: none; 
-                            border-radius: 50%; 
-                            width: 5rem; 
-                            height: 5rem; 
-                            display: flex; 
-                            flex-direction: column;     
-                            justify-content: center; 
-                            align-items: center; 
-                            cursor: pointer;
-                            padding: 0.5rem; 
-                            text-align: center;"
+                        data-value="Happy"
+                        style="font-size: 2.5rem; transition: transform 0.2s; border: none; background: none; border-radius: 50%; width: 5rem; height: 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; padding: 0.5rem; text-align: center;"
                         onmouseover={handleMouseOver}
                         onmouseout={handleMouseOut}
                         onclick={handleEmojiClick}>
@@ -84,17 +39,17 @@
                     </button>
                 </div>
 
-                <!-- Show the text box only for 'Very Poor' -->
+                <!-- Textbox shown only when 'Bad' is selected -->
                 <template if:true={showTextBox}>
                     <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
                         <lightning-input 
                             label="How can we make your experience better?"
                             value={improvementComment}
-                            
                             onchange={handleCommentChange}
                             maxlength="500"
                             class="slds-m-top_small"
-                            style="width: 38%; padding: 0.5rem; margin-bottom: 1rem; text-align: center;">
+                            style="width: 38%; padding: 0.5rem; margin-bottom: 1rem; text-align: center;"
+                            required>
                         </lightning-input>
                     </div>
                 </template>
@@ -114,6 +69,7 @@
             </div>
         </template>
 
+        <!-- Thank you message when survey is completed -->
         <template if:false={showSurvey}>
             <div class="slds-text-align_center slds-m-around_medium">
                 <p class="slds-text-heading_medium">Thank you for your feedback!</p>
