@@ -3,28 +3,25 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import saveSurvey from '@salesforce/apex/SurveyController.saveSurvey';
 
 export default class SurveyComponent extends LightningElement {
-    showSurvey = true; // Whether to show the survey or the thank you message
-    satisfactionValue = ''; // To store the selected emoji value
-    improvementComment = ''; // To store the comment entered by the user
-    showTextBox = false; // Whether to show the text box for comments (only when "Very Poor" is selected)
-    isSubmitVisible = false; // Whether the submit button should be shown
+    showSurvey = true;
+    satisfactionValue = '';
+    improvementComment = '';
+    showTextBox = false;
+    isSubmitVisible = false;
 
-    // Handle emoji click event
     handleEmojiClick(event) {
         this.satisfactionValue = event.target.dataset.value;
 
-        // Show the text box only if the selected emoji is "Very Poor"
-        if (this.satisfactionValue === 'Very Poor') {
+        if (this.satisfactionValue === 'Bad') {
             this.showTextBox = true;
         } else {
             this.showTextBox = false;
         }
 
-        // Show the submit button once an emoji is selected
         this.isSubmitVisible = true;
     }
 
-    // Handle mouse hover events for emojis (if required)
+    
     handleMouseOver(event) {
         event.target.style.transform = 'scale(1.1)';
     }
@@ -33,34 +30,34 @@ export default class SurveyComponent extends LightningElement {
         event.target.style.transform = 'scale(1)';
     }
 
-    // Handle the comment change in the text box
+    
     handleCommentChange(event) {
         this.improvementComment = event.target.value;
     }
 
-    // Handle the form submission
-    handleSubmit() {
-        // Validate if a satisfaction value is selected
+    
+    handleSubmit() { 
+       
         if (!this.satisfactionValue) {
             this.showToast('Error', 'Please select a satisfaction level before submitting.', 'error');
             return;
         }
 
+       
+        if (this.satisfactionValue === 'Bad' && !this.improvementComment) {
+            this.showToast('Error', 'Please provide a feedback for improvement.', 'error');
+            return;
+        }
+
         // Create the survey record by calling Apex
-        saveSurvey({ 
+        saveSurvey({
             satisfactionValue: this.satisfactionValue,
-            improvementComment: this.improvementComment // Pass the improvement comment to Apex
+            improvementComment: this.improvementComment
         })
             .then((result) => {
                 // After successful submission, show a success toast
                 this.showToast('Success', 'Your feedback has been submitted!', 'success');
-                
-                // Optionally, handle saving the comment if "Very Poor" was selected
-                if (this.satisfactionValue === 'Very Poor' && this.improvementComment) {
-                    // Save the improvement comment if needed (this logic depends on your Salesforce setup)
-                }
 
-                // Hide the survey after submission and show the thank you message
                 this.showSurvey = false;
             })
             .catch((error) => {
@@ -70,7 +67,7 @@ export default class SurveyComponent extends LightningElement {
             });
     }
 
-    // Utility function to show toast messages
+    
     showToast(title, message, variant) {
         const event = new ShowToastEvent({
             title,
