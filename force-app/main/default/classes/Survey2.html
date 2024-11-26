@@ -3,56 +3,110 @@
         <template if:true={showSurvey}>
             <div class="slds-text-align_center slds-m-around_medium">
                 <p class="slds-text-heading_small">Overall, how would you rate your check-in experience at our hotel?</p>
-                <div class="slds-grid slds-grid_align-center slds-wrap slds-m-top_medium">
+                <div 
+                    class="slds-grid slds-grid_align-center slds-wrap slds-m-top_medium"
+                    style="flex-wrap: wrap; gap: 1rem; justify-content: center;">
                     <!-- Emoji Buttons -->
                     <button 
                         class="slds-m-horizontal_small"
                         data-value="Bad"
-                        style="font-size: 2.5rem; transition: transform 0.2s; border: none; background: none; border-radius: 50%; width: 5rem; height: 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; padding: 0.5rem; text-align: center;"
+                        style="
+                            font-size: calc(2.5rem - 1vw); 
+                            transition: transform 0.2s; 
+                            border: none; 
+                            background: none; 
+                            border-radius: 50%; 
+                            width: calc(5rem - 1vw); 
+                            height: calc(5rem - 1vw); 
+                            display: flex; 
+                            flex-direction: column; 
+                            justify-content: center; 
+                            align-items: center; 
+                            cursor: pointer; 
+                            padding: 0.5rem; 
+                            text-align: center;"
                         onmouseover={handleMouseOver}
                         onmouseout={handleMouseOut}
                         onclick={handleEmojiClick}>
                         😭
-                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Bad</div>
+                        <div style="font-size: calc(0.75rem - 0.3vw); margin-top: 0.5rem; line-height: 1.2rem;">Bad</div>
                     </button>
 
                     <button 
                         class="slds-m-horizontal_small"
                         data-value="Neutral"
-                        style="font-size: 2.5rem; transition: transform 0.2s; border: none; background: none; border-radius: 50%; width: 5rem; height: 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; padding: 0.5rem; text-align: center;"
+                        style="
+                            font-size: calc(2.5rem - 1vw); 
+                            transition: transform 0.2s; 
+                            border: none; 
+                            background: none; 
+                            border-radius: 50%; 
+                            width: calc(5rem - 1vw); 
+                            height: calc(5rem - 1vw); 
+                            display: flex; 
+                            flex-direction: column; 
+                            justify-content: center; 
+                            align-items: center; 
+                            cursor: pointer; 
+                            padding: 0.5rem; 
+                            text-align: center;"
                         onmouseover={handleMouseOver}
                         onmouseout={handleMouseOut}
                         onclick={handleEmojiClick}>
                         😐
-                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Neutral</div>
+                        <div style="font-size: calc(0.75rem - 0.3vw); margin-top: 0.5rem; line-height: 1.2rem;">Neutral</div>
                     </button>
 
                     <button 
                         class="slds-m-horizontal_small"
                         data-value="Happy"
-                        style="font-size: 2.5rem; transition: transform 0.2s; border: none; background: none; border-radius: 50%; width: 5rem; height: 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; padding: 0.5rem; text-align: center;"
+                        style="
+                            font-size: calc(2.5rem - 1vw); 
+                            transition: transform 0.2s; 
+                            border: none; 
+                            background: none; 
+                            border-radius: 50%; 
+                            width: calc(5rem - 1vw); 
+                            height: calc(5rem - 1vw); 
+                            display: flex; 
+                            flex-direction: column; 
+                            justify-content: center; 
+                            align-items: center; 
+                            cursor: pointer; 
+                            padding: 0.5rem; 
+                            text-align: center;"
                         onmouseover={handleMouseOver}
                         onmouseout={handleMouseOut}
                         onclick={handleEmojiClick}>
                         😍
-                        <div style="font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.2rem;">Happy</div>
+                        <div style="font-size: calc(0.75rem - 0.3vw); margin-top: 0.5rem; line-height: 1.2rem;">Happy</div>
                     </button>
                 </div>
 
                 <!-- Textbox shown only when 'Bad' is selected -->
                 <template if:true={showTextBox}>
-                    <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                    <div style="
+                        display: flex; 
+                        flex-direction: column; 
+                        justify-content: center; /* Centers vertically */
+                        align-items: center;    /* Centers horizontally */
+                        width: 100%;            /* Ensures full width for proper centering */
+                        height: 100%;           /* Ensures it fills the parent container for vertical centering */">
                         <lightning-input 
                             label="How can we make your experience better?"
                             value={improvementComment}
                             onchange={handleCommentChange}
                             maxlength="500"
                             class="slds-m-top_small"
-                            style="width: 38%; padding: 0.5rem; margin-bottom: 1rem; text-align: center;"
-                            required>
+                            style="
+                                width: 80%;          /* Slightly reduced width for better alignment */
+                                padding: 0.5rem; 
+                                margin-bottom: 1rem; 
+                                text-align: center;">
                         </lightning-input>
                     </div>
                 </template>
+                
                 
                 <!-- Submit Button, shown only when an emoji is selected -->
                 <template if:true={isSubmitVisible}>
