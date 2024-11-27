@@ -1,5 +1,36 @@
-connectedCallback() {
-        const baseUrl = window.location.origin; // e.g., https://example.force.com
-        this.fullCommunityPath = baseUrl + communityBasePath;
-        console.log('Full Community Path:', this.fullCommunityPath);
+handleEmojiClick(event) {
+        this.satisfactionValue = event.target.dataset.value;
+
+        // Reset scaling for all emoji buttons
+        const allButtons = this.template.querySelectorAll('button');
+        allButtons.forEach((button) => {
+            button.style.transform = 'scale(1)';
+            button.style.boxShadow = 'none'; // Reset box shadow
+        });
+
+        // Scale up the clicked emoji
+        event.target.style.transform = 'scale(1.5)';
+        event.target.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0)'; // Add a shadow to highlight
+
+        if (this.satisfactionValue === 'Bad') {
+            this.showTextBox = true;
+        } else {
+            this.showTextBox = false;
+        }
+
+        this.isSubmitVisible = true;
+    }
+
+    handleMouseOver(event) {
+        // Only scale if it's not already the clicked emoji
+        if (event.target.style.transform !== 'scale(1.5)') {
+            event.target.style.transform = 'scale(1.2)';
+        }
+    }
+
+    handleMouseOut(event) {
+        // Reset the scaling if it's not the clicked emoji
+        if (event.target.style.transform !== 'scale(1.5)') {
+            event.target.style.transform = 'scale(1)';
+        }
     }
