@@ -1,0 +1,5 @@
+connectedCallback() {
+        const baseUrl = window.location.origin; // e.g., https://example.force.com
+        this.fullCommunityPath = baseUrl + communityBasePath;
+        console.log('Full Community Path:', this.fullCommunityPath);
+    }
