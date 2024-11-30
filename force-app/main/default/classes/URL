@@ -1,1 +1,4 @@
-<lightning-icon icon-name="utility:emoji" size="small"></lightning-icon>
+As a Guest, I want to use my loyalty points to book services such as a spa experience, dinner, and room upgrade. 
+
+'- Guests are able to use their points balance to book experiences.
+- After booking, guests will see the points balance reflect the booking of the experience. 
