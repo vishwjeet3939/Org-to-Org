@@ -13,19 +13,19 @@
         <ul class="slds-timeline">
             <li>
                 
-                <div class="slds-timeline__item_expandable slds-timeline__item_task ">  <!--{sectionClass}  slds-is-open-->
+                <div class={sectionClass}>  <!--{sectionClass}  slds-is-open-->
                     <span class="slds-assistive-text">task</span>
                     <div class="slds-media">
                         <div class="slds-media__figure">
-                            <button class="slds-button slds-button_icon"
+                            <button class="slds-button slds-button_icon  "
                                 title="Toggle details for Review proposals for EBC deck with larger team and have marketing review this"
-                                aria-controls="task-item-narrow-65" aria-expanded={ariaExpanded} onclick={toggleSection}>
+                                aria-controls="task-item-narrow-65" aria-expanded={ariaExpanded} onclick={handleToggleClick}>
                                 <svg class="slds-button__icon slds-timeline__details-action-icon" aria-hidden="true">
                                     <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#switch"></use>
                                 </svg>
-                                <span class="slds-assistive-text">Booking</span>
+                                <span class="slds-assistive-text">Booking </span>
                             </button>
-                            <div class="slds-icon_container slds-icon-standard-article slds-timeline__icon" title="task">
+                            <div class="slds-icon_container slds-icon-standard-article slds-timeline__icon"  title="task">
                                 <svg class="slds-icon slds-icon_small" aria-hidden="true">
                                     <use xlink:href="/_slds/icons/standard-sprite/svg/symbols.svg#task"></use>
                                 </svg>
@@ -56,10 +56,11 @@
                                     </button>
                                 </div>
                             </div>
-                            <p class="slds-m-horizontal_xx-small">
+                          <!--  <p class="slds-m-horizontal_xx-small">
                                 <a href="#">You</a> created a task with
                                 <a href="#">Charlie Gomez</a>
-                            </p>
+                            </p>-->
+ <template if:true={ariaExpanded}>
                             <article
                                 class="slds-box slds-timeline__item_details slds-theme_shade slds-m-top_x-small slds-m-horizontal_xx-small slds-p-around_medium"
                                 id="task-item-narrow-65">
@@ -84,6 +85,8 @@
                                         the meeting</p>
                                 </div>
                             </article>
+</template>
+
                         </div>
                     </div>
                 </div>
