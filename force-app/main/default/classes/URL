@@ -1,3 +1,22 @@
+import { LightningElement, track ,api} from 'lwc';
+
+export default class ActivityFeed extends LightningElement {
+     @track ariaExpanded = false; // Tracks expanded/collapsed state
+    @track sectionClass = 'slds-timeline__item_expandable slds-timeline__item_task'; // Dynamically changes SLDS class for open/closed
+
+    handleToggleClick() {
+        // Toggle the expanded state
+        this.ariaExpanded = !this.ariaExpanded;
+
+        // Add/remove the `slds-is-open` class dynamically
+        this.sectionClass = this.ariaExpanded ? 'slds-timeline__item_expandable slds-timeline__item_task slds-is-open' : 'slds-timeline__item_expandable slds-timeline__item_task';
+
+       
+    }
+}
+
+===========================================
+
 <template>
 
     <!--<lightning-card title="Activity Feed" icon-name="standard:feed" size="large">
