@@ -1,22 +1,19 @@
-<!--
-  @description       : 
-  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
-  @group             : 
-  @last modified on  : 12-04-2024
-  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
--->
 <template>
-    
+
+    <!--<lightning-card title="Activity Feed" icon-name="standard:feed" size="large">
+       
+        
+    </lightning-card> -->
 
     <div class="demo-only" style="width: 435px;
     background: white;
     padding: 1rem 1rem 0rem 0.5rem;">
-    <lightning-icon icon-name="utility:connected_apps" alternative-text="Connected" title="Activity Feed">
-    </lightning-icon>
+
+    
         <ul class="slds-timeline">
             <li>
                 
-                <div class="slds-timeline__item_expandable slds-timeline__item_task {sectionClass}">
+                <div class="slds-timeline__item_expandable slds-timeline__item_task ">  <!--{sectionClass}  slds-is-open-->
                     <span class="slds-assistive-text">task</span>
                     <div class="slds-media">
                         <div class="slds-media__figure">
@@ -28,7 +25,7 @@
                                 </svg>
                                 <span class="slds-assistive-text">Booking</span>
                             </button>
-                            <div class="slds-icon_container slds-icon-standard-task slds-timeline__icon" title="task">
+                            <div class="slds-icon_container slds-icon-standard-article slds-timeline__icon" title="task">
                                 <svg class="slds-icon slds-icon_small" aria-hidden="true">
                                     <use xlink:href="/_slds/icons/standard-sprite/svg/symbols.svg#task"></use>
                                 </svg>
@@ -73,13 +70,13 @@
                                             <a href="#">Charlie Gomez</a>
                                         </span>
                                     </li>
-                                    <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
+                                   <!-- <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
                                         <span class="slds-text-title slds-p-bottom_x-small">Related To</span>
                                         <span class="slds-text-body_medium slds-truncate"
                                             title="Tesla Cloudhub + Anypoint Connectors">
                                             <a href="#">Tesla Cloudhub + Anypoint Connectors</a>
                                         </span>
-                                    </li>
+                                    </li> -->
                                 </ul>
                                 <div>
                                     <span class="slds-text-title">Description</span>
@@ -149,13 +146,13 @@
                                             <a href="#">Adam Chan</a>
                                         </span>
                                     </li>
-                                    <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
+                                   <!--<li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
                                         <span class="slds-text-title slds-p-bottom_x-small">Related To</span>
                                         <span class="slds-text-body_medium slds-truncate"
                                             title="Tesla Cloudhub + Anypoint Connectors">
                                             <a href="#">Tesla Cloudhub + Anypoint Connectors</a>
                                         </span>
-                                    </li>
+                                    </li>--> 
                                 </ul>
                                 <div>
                                     <span class="slds-text-title">Description</span>
@@ -363,18 +360,3 @@
         </ul>
     </div>
 </template>
-
-
-
-
-ariaExpanded = false;
-    sectionClass = '';
-
-    // Method to toggle the section
-    toggleSection(event) {
-        // Toggle aria-expanded state
-        this.ariaExpanded = !this.ariaExpanded;
-
-        // Update section class based on expanded state
-        this.sectionClass = this.ariaExpanded ? 'slds-is-open' : '';
-    }
