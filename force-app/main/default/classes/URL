@@ -363,3 +363,18 @@
         </ul>
     </div>
 </template>
+
+
+
+
+ariaExpanded = false;
+    sectionClass = '';
+
+    // Method to toggle the section
+    toggleSection(event) {
+        // Toggle aria-expanded state
+        this.ariaExpanded = !this.ariaExpanded;
+
+        // Update section class based on expanded state
+        this.sectionClass = this.ariaExpanded ? 'slds-is-open' : '';
+    }
