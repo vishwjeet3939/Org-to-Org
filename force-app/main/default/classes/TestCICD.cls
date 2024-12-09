@@ -11,3 +11,5 @@ public with sharing class TestCICD {
 }
 
 SUMMATION (Rating for each attribute x Weight of that attribute) / SUMMATION (Weights)
+
+https://img.icons8.com/fluency/48/chat.png
