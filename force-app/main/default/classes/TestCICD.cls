@@ -14,12 +14,4 @@ SUMMATION (Rating for each attribute x Weight of that attribute) / SUMMATION (We
 
 https://img.icons8.com/fluency/48/chat.png
 
-https://dpa00000onw0emah.my.salesforce.com/secur/frontdoor.jsp?sid=00DPa00000ONW0eMAH!AQEAQC5_Q.Jel38.NdWluIxYO.yc4k_RGrXtGTw1U7p8rHLzi.vHtoFoqWqnCw7IFOLEXZbs7Sb9MN1_yW_yi73biN9A0XkU
-
-
-
-
-  <lightning-card title="Primary Vehicle" icon-name="standard:vehicle">
-    <div class="vehicle-name-box">
-            <h1>{primaryVehicle.Name}</h1>
-        </div>
+https://dpa00000onw0emah.my.salesforce.com/secur/frontdoor.jsp?sid=00DPa00000ONW0eMAH!AQEAQNuvnGDV4vWKOqfMNeYppkGPDey_xuEdWiCwn6xtqFUogcFeuvxKk_apsBGMn4AF29abIucNZS4uTzQtrLLrn.vsAFyY
