@@ -24,3 +24,31 @@
         </div>
     </div>
 </template>
+-------------------------------
+<template>
+    <div class="carousel-container">
+        <!-- Carousel Section -->
+        <div class="carousel">
+            <template for:each={images} for:item="image">
+                <div key={image.src} class="carousel-slide">
+                    <img src={image.src} alt={image.title} class="carousel-image" />
+                    <div class="caption">
+                        <h2>{image.title}</h2>
+                        <p>{image.description}</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Static Vehicle Details -->
+        <div class="details">
+            <h2>Top Speed</h2>
+            <p>214 mph</p>
+            <h2>Power</h2>
+            <p>824 bhp</p>
+            <h2>0-62 mph</h2>
+            <p>3.3 sec</p>
+        </div>
+    </div>
+</template>
+
