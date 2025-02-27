@@ -1,1 +1,25 @@
-https://dpa00000onw0emah.my.salesforce.com/secur/frontdoor.jsp?sid=00DPa00000ONW0eMAH!AQEAQP6GmcugwyAz.9WhiCW7c2kV7Fe3uWlSFnGGMjANp96ziqu_VEY0zycGh3.zA3zVgJ5QXbf0vFcMK8xPgmQwNphptsvy
+String [] conFields= new String [] {'ID','DS_SFQB_Primary_Contact_on_Quickbook__c'};
+                                    Map<String,Schema.SObjectField> conCheck = Schema.SObjectType.Contact.fields.getMap();
+                                for (String fieldToCheck : conFields) {
+                                    // Check if the user has create access on the each field
+                                    if (conCheck.get(fieldToCheck)!= null && !conCheck.get(fieldToCheck).getDescribe().isAccessible()) {
+                                        ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.FATAL,
+                                                                                   'Insufficient access')); 
+                                        
+                                    }
+                                }
+
+
+--------------
+String [] ProductIdFields = new String [] {'DS_SFQB_Refresh_Token__c','DS_SFQB_Expire_In_Seconds__c','DS_SFQB_Refresh_Token_Expires_in_Seconds__c','DS_SFQB_Last_Token_Refreshed_At__c','PaymentMethodRefID__c','Payment_ID__c'};
+                Map<String,Schema.SObjectField> m1 = Schema.SObjectType.Quickbook__c.fields.getMap();
+            for (String fieldToCheck : ProductIdFields) {
+                
+                if(m1.get(fieldToCheck)!= null){
+                    if (!m1.get(fieldToCheck).getDescribe().isCreateable() && (!m1.get(fieldToCheck).getDescribe().isupdateable())) {
+                        ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.FATAL,
+                                                                   'Insufficient access')); 
+                        
+                    }
+                }  
+            }
