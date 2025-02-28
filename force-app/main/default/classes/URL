@@ -1,16 +1,4 @@
-String [] conFields= new String [] {'ID','DS_SFQB_Primary_Contact_on_Quickbook__c'};
-                                    Map<String,Schema.SObjectField> conCheck = Schema.SObjectType.Contact.fields.getMap();
-                                for (String fieldToCheck : conFields) {
-                                    // Check if the user has create access on the each field
-                                    if (conCheck.get(fieldToCheck)!= null && !conCheck.get(fieldToCheck).getDescribe().isAccessible()) {
-                                        ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.FATAL,
-                                                                                   'Insufficient access')); 
-                                        
-                                    }
-                                }
 
-
---------------
 String [] ProductIdFields = new String [] {'DS_SFQB_Refresh_Token__c','DS_SFQB_Expire_In_Seconds__c','DS_SFQB_Refresh_Token_Expires_in_Seconds__c','DS_SFQB_Last_Token_Refreshed_At__c','PaymentMethodRefID__c','Payment_ID__c'};
                 Map<String,Schema.SObjectField> m1 = Schema.SObjectType.Quickbook__c.fields.getMap();
             for (String fieldToCheck : ProductIdFields) {
@@ -23,3 +11,6 @@ String [] ProductIdFields = new String [] {'DS_SFQB_Refresh_Token__c','DS_SFQB_E
                     }
                 }  
             }
+------------------------------------
+to display the telemetry timeline, It will be the top telemetry 50 events specific to that vehicle using DMO, it should be placed below Vehicle timeline. 
+Also create a report that shows the top 200 telemetry data using DMO for that particular vehicle and place it below the telemetry timeline.
