@@ -1,16 +1,1 @@
-
-String [] ProductIdFields = new String [] {'DS_SFQB_Refresh_Token__c','DS_SFQB_Expire_In_Seconds__c','DS_SFQB_Refresh_Token_Expires_in_Seconds__c','DS_SFQB_Last_Token_Refreshed_At__c','PaymentMethodRefID__c','Payment_ID__c'};
-                Map<String,Schema.SObjectField> m1 = Schema.SObjectType.Quickbook__c.fields.getMap();
-            for (String fieldToCheck : ProductIdFields) {
-                
-                if(m1.get(fieldToCheck)!= null){
-                    if (!m1.get(fieldToCheck).getDescribe().isCreateable() && (!m1.get(fieldToCheck).getDescribe().isupdateable())) {
-                        ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.FATAL,
-                                                                   'Insufficient access')); 
-                        
-                    }
-                }  
-            }
-------------------------------------
-to display the telemetry timeline, It will be the top telemetry 50 events specific to that vehicle using DMO, it should be placed below Vehicle timeline. 
-Also create a report that shows the top 200 telemetry data using DMO for that particular vehicle and place it below the telemetry timeline.
+https://dpa00000onw0emah.my.salesforce.com/secur/frontdoor.jsp?sid=00DPa00000ONW0eMAH!AQEAQE3ve3WGnGfBHxFbHWJBDqo9GRLA3_e9fKTsqTlzpJ3y_3rVec3kvADycMErXaE4btdUfSB7D5qmI8rY8.9ATIAMQiSj
